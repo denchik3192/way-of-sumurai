@@ -17,7 +17,7 @@ let initialState ={
     messages: [
         { id: 1, message: 'hi' },
         { id: 2, message: 'how are you?' },
-        { id: 3, message: 'slut' }
+        { id: 3, message: 'bibb' }
 
     ],
     newMessageText: ""
