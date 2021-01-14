@@ -10,7 +10,7 @@ import Musik from './Components/Musik/Musik';
 import Settings from './Components/Settings/Settings';
 import Friends from './Components/Friends/Friends';
 import DialogsContainer from './Components/Dialogs/DialogsContainer';
-import Users from './Components/Users/Users';
+import UsersContainer from './Components/Users/UsersContainer';
 
 
 const App = (props) => {
@@ -43,7 +43,7 @@ const App = (props) => {
               />} />
 
           <Route path='/users' 
-          render={() => <Users/>} />
+          render={() => <UsersContainer/>} />
 
         </div>
       </div>
