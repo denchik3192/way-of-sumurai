@@ -25,7 +25,7 @@ let initialState ={
 
 const dialogsReducer = (state = initialState, action) => {
 
-    let stateCopy;
+    // let stateCopy;
     
 
     switch(action.type){
