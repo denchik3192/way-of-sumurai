@@ -25,11 +25,11 @@ let mapDispatchToProps =(dispatch)=>{
         setUsers:(users) => {
             dispatch(setUsersAC(users));
         },
-        setCurrentPage:(currentPage) => {
-            dispatch(setCurrentPageAC(currentPage));
+        setCurrentPage:(pageNumber) => {
+            dispatch(setCurrentPageAC(pageNumber));
         },
-        setUsers:(usersCount) => {
-            dispatch(setTotalUsersCountAC(usersCount));
+        setTotalUsersCount:(totalCount) => {
+            dispatch(setTotalUsersCountAC(totalCount));
         }
 
     }
