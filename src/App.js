@@ -30,7 +30,7 @@ const App = (props) => {
             // updateNewMessageText={props.updateNewMessageText}
               />} />
 
-          <Route path='/profile' 
+          <Route path='/profile/:userId?' 
           render={() => <ProfileContainer />} />             {/*Для передачи пропсов Наш Route может мешать поэтому есть 2 вар-та это первый   */}
         
           <Route path='/news'> <News /> </Route>                             {/* это второй*/}
@@ -50,4 +50,7 @@ const App = (props) => {
   );
 }
 
-export default App;
+export default App; 
+
+
+
