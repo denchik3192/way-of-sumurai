@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import News from './Components/News/News';
 import Musik from './Components/Musik/Musik';
 import Settings from './Components/Settings/Settings';
@@ -13,12 +12,10 @@ import ProfileContainer from './Components/Profile/ProfileContainer';
 import HeaderContainer from './Components/Header/HeaderContainer';
 
 
-const App = (props) => {
+const App = () => {
 
 
   return (
-    
-    <BrowserRouter>
       <div className='app-wrapper'>
         <HeaderContainer />
         <Navbar /> 
@@ -47,7 +44,6 @@ const App = (props) => {
 
         </div>
       </div>
-    </BrowserRouter>
   );
 }
 
