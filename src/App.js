@@ -10,44 +10,48 @@ import DialogsContainer from './Components/Dialogs/DialogsContainer';
 import UsersContainer from './Components/Users/UsersContainer';
 import ProfileContainer from './Components/Profile/ProfileContainer';
 import HeaderContainer from './Components/Header/HeaderContainer';
+import LoginPage from './Components/Login/Login';
 
 
 const App = () => {
 
 
   return (
-      <div className='app-wrapper'>
-        <HeaderContainer />
-        <Navbar /> 
-        {/* // {props.state.sidebar}/>  */}
-        <div className='app-wrapper-content'>
-          <Route path='/dialogs'
-            render={() => <DialogsContainer 
+    <div className='app-wrapper'>
+      <HeaderContainer />
+      <Navbar />
+      {/* // {props.state.sidebar}/>  */}
+      <div className='app-wrapper-content'>
+        <Route path='/dialogs'
+          render={() => <DialogsContainer
 
-            // addMessage={props.addMessage} 
-            // updateNewMessageText={props.updateNewMessageText}
-              />} />
+          // addMessage={props.addMessage} 
+          // updateNewMessageText={props.updateNewMessageText}
+          />} />
 
-          <Route path='/profile/:userId?' 
+        <Route path='/profile/:userId?'
           render={() => <ProfileContainer />} />             {/*Для передачи пропсов Наш Route может мешать поэтому есть 2 вар-та это первый   */}
-        
-          <Route path='/news'> <News /> </Route>                             {/* это второй*/}
-          <Route path='/musik'> <Musik /> </Route>
-          <Route path='/settings'> <Settings /> </Route>
 
-          <Route path='/friends'
-            render={() => <Friends 
-              />} />
+        <Route path='/news'> <News /> </Route>                             {/* это второй*/}
+        <Route path='/musik'> <Musik /> </Route>
+        <Route path='/settings'> <Settings /></Route>
 
-          <Route path='/users' 
-          render={() => <UsersContainer/>} />
+        <Route path='/friends'
+          render={() => <Friends
+          />} />
 
-        </div>
+        <Route path='/users'
+          render={() => <UsersContainer />} />
+
+        <Route path='/login'
+          render={() => <LoginPage />} />
+
       </div>
+    </div>
   );
 }
 
-export default App; 
+export default App;
 
 
 
