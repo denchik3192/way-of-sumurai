@@ -2,52 +2,55 @@ import React from 'react';
 import { updateNewMessageTextCreator, addMessageCreator } from '../../redux/dialogs-reducer';
 import Dialogs from './Dialogs';
 import { connect } from 'react-redux';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 
 
 // const DialogsContainer = () => {
 //     // debugger;
 
-//     return <StoreContext.Consumer>
-//         { (store) => {
-//                 let state = store.getState().dialogsPage;
+//     // return <StoreContext.Consumer>
+//     //     { (store) => {
+//     //             let state = store.getState().dialogsPage;
 
-//                 let addMessage = () => {
-//                     store.dispatch(addMessageCreator());
-//                 }
-//                 let onMessageChange = (text) => {
+//     //             let addMessage = () => {
+//     //                 store.dispatch(addMessageCreator());
+//     //             }
+//     //             let onMessageChange = (text) => {
 
-//                     store.dispatch(updateNewMessageTextCreator(text));
-//                 }
-//                 return <Dialogs updateNewMessageText={onMessageChange}
-//                     addMessage={addMessage}
-//                     dialogsPage={state} />
+//     //                 store.dispatch(updateNewMessageTextCreator(text));
+//     //             }
+//     //             return <Dialogs updateNewMessageText={onMessageChange}
+//     //                 addMessage={addMessage}
+//     //                 dialogsPage={state} />
 
-//             }
-//         }
-//         </StoreContext.Consumer>
-    
+//     //         }
+//     //     }
+//     //     </StoreContext.Consumer>
+
 
 // }
 
-let mapStateToProps =(state)=>{
-    return{
+let mapStateToProps = (state) => {
+    return {
         dialogsPage: state.dialogsPage,
-        isAuth: state.auth.isAuth
+        
     }
 }
 
-let mapDispatchToProps =(dispatch)=>{
-    return{
-        updateNewMessageText: (text) =>{
+let mapDispatchToProps = (dispatch) => {
+    return {
+        updateNewMessageText: (text) => {
             dispatch(updateNewMessageTextCreator(text));
         },
-        addMessage: () =>{
+        addMessage: () => {
             dispatch(addMessageCreator());
         }
 
     }
 }
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
+let AuthRedirectComponent = withAuthRedirect(Dialogs)
+
+const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(AuthRedirectComponent);
 
 export default DialogsContainer;
