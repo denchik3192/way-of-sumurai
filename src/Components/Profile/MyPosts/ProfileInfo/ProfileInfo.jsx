@@ -4,7 +4,7 @@ import s from './profileinfo.module.css';
 import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
-
+    // debugger
     if (!props.profile) {
         return <Preloader/>
     }
@@ -16,7 +16,7 @@ const ProfileInfo = (props) => {
             <div className={s.descriptionBlock}>
             <img src={props.profile.photos.large}/>
                 {/* ava + {props.profile.aboutMe} */}
-                <ProfileStatus status={"sup villains"} />
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
             </div>
         </div>
 
