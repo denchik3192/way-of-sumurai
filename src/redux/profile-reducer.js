@@ -16,7 +16,7 @@ let initialState = {
     ],
     newPostText: 'loo',
     profile: null,
-    status: "sup villians"
+    status: ""
 };
 
 const profileReducer = (state = initialState, action) => { 
@@ -67,16 +67,15 @@ export const updateNewPostTextCreator = (text) =>
 export const setUserProfile = (profile) =>({type:SET_USER_PROFILE, profile})
 export const setStatus = (status) =>({type:SET_STATUS, status})
 
-export const getUserProfile = (userId) => (dispatch) =>{
 
+export const getUserProfile = (userId) => (dispatch) => {
         usersAPI.getProfile(userId).then(response => {
             dispatch(setUserProfile(response.data));
     });
-
 }
 
-export const getStatus = (userId) => (dispatch) =>{
 
+export const getStatus = (userId) => (dispatch) => { 
     profileAPI.getStatus(userId)
     .then(response => {
         // debugger;
