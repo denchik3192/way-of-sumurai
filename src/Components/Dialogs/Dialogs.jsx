@@ -4,9 +4,7 @@ import Message from './Message/Message';
 import s from './dialogs.module.css';
 import { Redirect } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
-
-
-
+import { maxLengthCreator, required } from '../../utils/validators/validator';
 
 const Dialogs = (props) => {
     let state = props.dialogsPage;
@@ -42,14 +40,14 @@ const Dialogs = (props) => {
     )
 }
 
-
-
+const maxLength10 = maxLengthCreator(50);
 
 const AddMessageForm = (props) => {
     return(
         <form onSubmit={props.handleSubmit}>
         <div>
-            <Field component="textarea"  name="newMessageText" placeholder="enter message"/>
+            <Field component="textarea"
+            validate={[required, maxLength10]}  name="newMessageText" placeholder="enter message"/>
         </div>
 
     <div>
