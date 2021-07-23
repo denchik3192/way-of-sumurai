@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import News from './Components/News/News';
 import Musik from './Components/Musik/Musik';
 import Settings from './Components/Settings/Settings';
@@ -11,10 +11,21 @@ import UsersContainer from './Components/Users/UsersContainer';
 import ProfileContainer from './Components/Profile/ProfileContainer';
 import HeaderContainer from './Components/Header/HeaderContainer';
 import LoginPage from './Components/Login/Login';
+import initializeApp from './redux/app-reducer';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import Preloader from './Components/Common/Preloader/Preloader';
 
+class App extends React.Component {
+  componentDidMount() {
+    this.props.initializeApp();
+  }
+render () {
 
-const App = () => {
-
+  if (!this.props.initialized) {
+    return <Preloader/>
+  }
+  
 
   return (
     <div className='app-wrapper'>
@@ -24,7 +35,6 @@ const App = () => {
       <div className='app-wrapper-content'>
         <Route path='/dialogs'
           render={() => <DialogsContainer
-
           // addMessage={props.addMessage} 
           // updateNewMessageText={props.updateNewMessageText}
           />} />
@@ -49,9 +59,19 @@ const App = () => {
       </div>
     </div>
   );
+
+}
+  
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  initialized: state.app.initialized
+})
+
+export default compose(
+  withRouter,
+  connect(mapStateToProps, { initializeApp })) (App);
+
 
 
 
