@@ -3,12 +3,10 @@ import profileReducer from "./profile-reducer";
 import dialogsReducer from "./dialogs-reducer";
 import sidebarReducer from "./sidebar-reducer";
 import usersReducer from "./users-reduser";
-import authReducer from "./app-reducer";
+import authReducer from "./auth-reducer";
+import appReducer from "./app-reducer";
 import thunkMiddlewere from "redux-thunk";
 import { reducer as formReducer } from "redux-form";
-import appReducer from "./app-reducer";
-
-
 
 let redusers = combineReducers({
     profilePage:profileReducer,

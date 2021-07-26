@@ -11,15 +11,17 @@ import UsersContainer from './Components/Users/UsersContainer';
 import ProfileContainer from './Components/Profile/ProfileContainer';
 import HeaderContainer from './Components/Header/HeaderContainer';
 import LoginPage from './Components/Login/Login';
-import initializeApp from './redux/app-reducer';
+import { initializeApp } from './redux/app-reducer';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import Preloader from './Components/Common/Preloader/Preloader';
+import { Component } from 'react';
 
-class App extends React.Component {
+class App extends Component { 
   componentDidMount() {
     this.props.initializeApp();
   }
+
 render () {
 
   if (!this.props.initialized) {
