@@ -6,9 +6,11 @@ import {follow, unfollow, setCurrentPage,
 import Preloader from '../Common/Preloader/Preloader';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import { compose } from 'redux';
-import { getCurrentPage, getFollowingInProgress, getIsFetching, getPageSize,
-    getTotalUsersCount,
-    getUsersPage
+import { getCurrentPage, 
+        getFollowingInProgress, 
+        getIsFetching, getPageSize,
+        getTotalUsersCount,
+        getUsersPage
     } from '../../redux/users-selectors';
 
 class UsersContainer extends React.Component {
