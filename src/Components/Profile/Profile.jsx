@@ -6,7 +6,7 @@ import ProfileInfo from './MyPosts/ProfileInfo/ProfileInfo';
 import s from './profile.module.css';
 
 const Profile = (props) => {
-// debugger;
+console.log('profie check');
     return (
         <div>
             

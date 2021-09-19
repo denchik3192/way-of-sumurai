@@ -1,4 +1,5 @@
-import React from 'react';
+import { render } from '@testing-library/react';
+import React, { Component, PureComponent } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { maxLengthCreator, required } from '../../../utils/validators/validator';
 import { TextArea } from '../../Common/FormsControls/FormsControl';
@@ -6,6 +7,7 @@ import s from './MyPosts.module.css';
 import Post from './Post/Post';
 
 const  maxLength10 = maxLengthCreator(10  );
+
 const addNewPostForm = (props) => {
     return (
     <form onSubmit={props.handleSubmit}>
@@ -23,7 +25,13 @@ const addNewPostForm = (props) => {
 }
 const ReduxPostForm = reduxForm ({form: "addPostMessageForm"}) (addNewPostForm)
 
-const MyPosts = (props) => {
+const MyPosts  = React.memo(props => {
+
+    // shouldComponentUpdate (nextProps, nextState) {
+    //     return nextProps !== this.props || nextState !== this.state;
+    // }
+    
+    console.log("render posts"); 
     
     let postsElements = 
     props.posts.map(post => <Post message={post.message} LikesCount={post.likesCount} />);
@@ -33,7 +41,6 @@ const MyPosts = (props) => {
     let addNewPostMessage = (values) => {
         props.addPost(values.newPostText);
     }
-
 
     return (
         <div className={s.postsBlock}>
@@ -46,7 +53,8 @@ const MyPosts = (props) => {
             </div>
         </div>
     )
-}
+});
+
 
 
 export default MyPosts;
