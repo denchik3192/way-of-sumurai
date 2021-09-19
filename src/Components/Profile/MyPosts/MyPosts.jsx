@@ -26,15 +26,13 @@ const addNewPostForm = (props) => {
 const ReduxPostForm = reduxForm ({form: "addPostMessageForm"}) (addNewPostForm)
 
 const MyPosts  = React.memo(props => {
-
-    // shouldComponentUpdate (nextProps, nextState) {
-    //     return nextProps !== this.props || nextState !== this.state;
-    // }
     
     console.log("render posts"); 
     
     let postsElements = 
-    props.posts.map(post => <Post message={post.message} LikesCount={post.likesCount} />);
+    [...props.posts]
+        .reverse()
+        .map(post => <Post message={post.message} LikesCount={post.likesCount} />);
 
     // let newPostElement = React.createRef();
 
@@ -54,7 +52,6 @@ const MyPosts  = React.memo(props => {
         </div>
     )
 });
-
 
 
 export default MyPosts;
