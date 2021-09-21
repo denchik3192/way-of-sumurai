@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
-import { Route, withRouter } from 'react-router-dom';
+import { BrowserRouter, Route, withRouter } from 'react-router-dom';
 import News from './Components/News/News';
 import Musik from './Components/Musik/Musik';
 import Settings from './Components/Settings/Settings';
@@ -12,10 +12,11 @@ import ProfileContainer from './Components/Profile/ProfileContainer';
 import HeaderContainer from './Components/Header/HeaderContainer';
 import LoginPage from './Components/Login/Login';
 import { initializeApp } from './redux/app-reducer';
-import { connect } from 'react-redux';
+import { connect, Provider } from 'react-redux';
 import { compose } from 'redux';
 import Preloader from './Components/Common/Preloader/Preloader';
 import { Component } from 'react';
+import store from './redux/redux-store';
 
 class App extends Component { 
   componentDidMount() {
@@ -30,6 +31,8 @@ render () {
   
 
   return (
+            <BrowserRouter>
+            <Provider store ={store}>
     <div className='app-wrapper'>
       <HeaderContainer />
       <Navbar />
@@ -60,6 +63,8 @@ render () {
 
       </div>
     </div>
+        </Provider>
+        </BrowserRouter>
   );
 
 }
