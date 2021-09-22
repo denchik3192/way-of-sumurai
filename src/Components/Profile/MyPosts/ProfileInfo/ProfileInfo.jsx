@@ -1,14 +1,10 @@
 import React from 'react';
-import Preloader from '../../../Common/Preloader/Preloader';
 import s from './profileinfo.module.css';
-import ProfileStatus from './ProfileStatus';
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 
-const ProfileInfo = (props) => {
+const ProfileInfo = ({status, updateStatus, profile, }) => {
 
-    
-    
-    // if (!props.profile) { to do!!!!!!!!!
+    // if (!profile) { to do!!!!!!!!!
     //     return <Preloader/>
     // }
     return (
@@ -17,11 +13,10 @@ const ProfileInfo = (props) => {
                 <img src='https://images.wallpaperscraft.ru/image/gory_nebo_bali_voskhod_solntsa_kintamani_indoneziya_95497_1920x1080.jpg' width="70%" alt="" />
             </div> */}
             <div className={s.descriptionBlock}>
-            {/* <img src={props.profile.photos.large}/> */}
+            {/* <img src={profile.photos.large} alt="user"/> */}
                 
-                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
-
-                
+                <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
+    
             </div>
         </div>
 
