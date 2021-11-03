@@ -15,7 +15,7 @@ const ProfileInfo = ({status, updateStatus, profile, }) => {
             <div className={s.descriptionBlock}>
             {/* <img src={profile.photos.large} alt="user"/> */}
                 
-                <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
+                {/* <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/> */}
     
             </div>
         </div>
