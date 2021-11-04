@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/way-of-sumurai/static/css/main.687a2137.chunk.css",
+    "main.js": "/way-of-sumurai/static/js/main.10ca7131.chunk.js",
+    "main.js.map": "/way-of-sumurai/static/js/main.10ca7131.chunk.js.map",
+    "runtime-main.js": "/way-of-sumurai/static/js/runtime-main.a68b77bd.js",
+    "runtime-main.js.map": "/way-of-sumurai/static/js/runtime-main.a68b77bd.js.map",
+    "static/js/2.d9a6db30.chunk.js": "/way-of-sumurai/static/js/2.d9a6db30.chunk.js",
+    "static/js/2.d9a6db30.chunk.js.map": "/way-of-sumurai/static/js/2.d9a6db30.chunk.js.map",
+    "static/js/3.b83c79ea.chunk.js": "/way-of-sumurai/static/js/3.b83c79ea.chunk.js",
+    "static/js/3.b83c79ea.chunk.js.map": "/way-of-sumurai/static/js/3.b83c79ea.chunk.js.map",
+    "static/css/4.c618d7a4.chunk.css": "/way-of-sumurai/static/css/4.c618d7a4.chunk.css",
+    "static/js/4.4f8ddae1.chunk.js": "/way-of-sumurai/static/js/4.4f8ddae1.chunk.js",
+    "static/js/4.4f8ddae1.chunk.js.map": "/way-of-sumurai/static/js/4.4f8ddae1.chunk.js.map",
+    "static/css/5.2c3309e0.chunk.css": "/way-of-sumurai/static/css/5.2c3309e0.chunk.css",
+    "static/js/5.6abb5451.chunk.js": "/way-of-sumurai/static/js/5.6abb5451.chunk.js",
+    "static/js/5.6abb5451.chunk.js.map": "/way-of-sumurai/static/js/5.6abb5451.chunk.js.map",
+    "static/js/6.a6ff4db6.chunk.js": "/way-of-sumurai/static/js/6.a6ff4db6.chunk.js",
+    "static/js/6.a6ff4db6.chunk.js.map": "/way-of-sumurai/static/js/6.a6ff4db6.chunk.js.map",
+    "index.html": "/way-of-sumurai/index.html",
+    "static/css/4.c618d7a4.chunk.css.map": "/way-of-sumurai/static/css/4.c618d7a4.chunk.css.map",
+    "static/css/5.2c3309e0.chunk.css.map": "/way-of-sumurai/static/css/5.2c3309e0.chunk.css.map",
+    "static/css/main.687a2137.chunk.css.map": "/way-of-sumurai/static/css/main.687a2137.chunk.css.map",
+    "static/js/2.d9a6db30.chunk.js.LICENSE.txt": "/way-of-sumurai/static/js/2.d9a6db30.chunk.js.LICENSE.txt",
+    "static/js/3.b83c79ea.chunk.js.LICENSE.txt": "/way-of-sumurai/static/js/3.b83c79ea.chunk.js.LICENSE.txt",
+    "static/media/preloader.4a346118.gif": "/way-of-sumurai/static/media/preloader.4a346118.gif",
+    "static/media/user.cfd034fb.jpg": "/way-of-sumurai/static/media/user.cfd034fb.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a68b77bd.js",
+    "static/js/3.b83c79ea.chunk.js",
+    "static/css/main.687a2137.chunk.css",
+    "static/js/main.10ca7131.chunk.js"
+  ]
+}
