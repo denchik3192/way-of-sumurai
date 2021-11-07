@@ -1,4 +1,6 @@
 body {
+  background: -webkit-linear-gradient(90deg, #567599,#1f2e4b);
+  background: linear-gradient(90deg, #567599,#1f2e4b);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -11,3 +13,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* gradient-effect a:not(.epcl-button){padding-bottom:5px;
+  background-image:-webkit-gradient(linear,left top,right top,from(#00bec1),to(#00bec1));
+  background-image:-o-linear-gradient(left,#00bec1 0%,#00bec1 100%);
+  background-image:linear-gradient(to right,#00bec1 0%,#00bec1 100%);
+  background-size:0px 4px;background-repeat:no-repeat;
+  background-position:left 87%}
+  .gradient-effect a:not(.epcl-button):after,.gradient-effect a:not(.epcl-button):before{display:none}
+  .gradient-effect a:not(.epcl-button):hover{color:#222;background-size:100% 4px}
+  .epcl-pagination div.nav a.gradient-effect a,.gradient-effect.red a{background-image:-webkit-gradient(linear,left top,right top,from(#e84e89),to(#e84e89));
+    background-image:-o-linear-gradient(left,#e84e89 0%,#e84e89 100%);
+  background-image:linear-gradient(to right,#e84e89 0%,#e84e89 100%)} */

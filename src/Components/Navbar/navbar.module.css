@@ -2,6 +2,8 @@
     padding: 20px;
     grid-area: n;
     background-color: rgb(179, 174, 144);
+    border-radius: 4px;
+    /* background: -webkit-linear-gradient(301deg, #00a49b,#026773,#092c4e);background: linear-gradient(301deg, #00a49b,#026773,#092c4e); */
     }
 .item a{
     color: white;

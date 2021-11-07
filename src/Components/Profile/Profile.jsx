@@ -1,17 +1,23 @@
-import React from 'react';
+import React from "react";
 // import { addPost } from '../../redux/state';
 
-import MyPostsContainer from './MyPosts/MyPostsContainer';
-import ProfileInfo from './MyPosts/ProfileInfo/ProfileInfo';
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
+import ProfileInfo from "./MyPosts/ProfileInfo/ProfileInfo";
 
 const Profile = (props) => {
-console.log('profie check');
-    return (
-        <div>       
-            <ProfileInfo profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
-            <MyPostsContainer /> 
-        </div>
-    )
-}
+  return (
+    <div>
+      <ProfileInfo
+        savePhoto={props.savePhoto}
+        saveProfile={props.saveProfile}
+        isOwner={props.isOwner}
+        profile={props.profile}
+        status={props.status}
+        updateStatus={props.updateStatus}
+      />
+      <MyPostsContainer />
+    </div>
+  );
+};
 
 export default Profile;
