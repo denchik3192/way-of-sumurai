@@ -66,7 +66,7 @@ export const authAPI = {
         return instance.get(`auth/me`)
     },
     login(email, password, rememberMe = false) {
-        return instance.post(`auth/login`, { email, password, rememberMe })
+        return instance.post(`auth/login`, { email, password, rememberMe, captcha })
     },
     logout() {
         return instance.delete(`auth/login`)
@@ -74,9 +74,12 @@ export const authAPI = {
 
 }
 
-// export const getUsers2 = (currentPage = 1, pageSize = 10) => {
-//     return instance.get( `follow?page=${currentPage}&count=${pageSize}`)
-//     .then(response => response.data)
+export const securityAPI = {
+   
+    getCapchaURL() {
+        return instance.get(`security/get-captcha-url`);
+    },
 
-// }
+}
+
 
