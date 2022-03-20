@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
-import { Route, withRouter } from "react-router-dom";
+import { Route, withRouter, Switch, Redirect} from "react-router-dom";
 import News from "./Components/News/News";
 import Musik from "./Components/Musik/Musik";
 import Settings from "./Components/Settings/Settings";
@@ -21,10 +21,18 @@ const DialogsContainer = React.lazy(() => import('./Components/Dialogs/DialogsCo
 const ProfileContainer = React.lazy(() => import('./Components/Profile/ProfileContainer'));
 
 class App extends Component {
-  componentDidMount() {
-    this.props.initializeApp();
+  catchAllUnhandledErrors = (promiseRejectionEvent) => {
+    alert("Some Error Occured");
+    console.log();
   }
 
+  componentDidMount() { 
+    this.props.initializeApp();
+    window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors)
+  }
   render() {
     if (!this.props.initialized) {
       return <Preloader />;
@@ -34,8 +42,9 @@ class App extends Component {
           <div className="app-wrapper">
             <HeaderContainer />
             <Navbar />
-            {/* // {props.state.sidebar}/>  */}
             <div className="app-wrapper-content">
+
+              <Switch>
               <Route path="/dialogs"
                 render={() => {
                   return <Suspense fallback={<div>Loading...</div>}>
@@ -49,24 +58,17 @@ class App extends Component {
                   return <Suspense fallback={<div>Loading...</div>}>
                       <ProfileContainer />
                   </Suspense>
-                }}/>{" "}
-              {/*Для передачи пропсов Наш Route может мешать поэтому есть 2 вар-та это первый   */}
-              <Route path="/news">
-                {" "}
-                <News />{" "}
-              </Route>{" "}
-              {/* это второй*/}
-              <Route path="/musik">
-                {" "}
-                <Musik />{" "}
-              </Route>
-              <Route path="/settings">
-                {" "}
-                <Settings />
-              </Route>
-              <Route path="/friends" render={() => <Friends />} />
-              <Route path="/users" render={() => <UsersContainer />} />
-              <Route path="/login" render={() => <LoginPage />} />
+                }}/>
+                
+                <Route exact path="/" render={() => <Redirect to={"/profile"}/>} />
+                <Route path="/news" render={() => <News />}/>
+                <Route path="/musik" render={() => <Musik />}/>
+                <Route path="/settings" render={() => <Settings />}/>
+                <Route path="/friends" render={() => <Friends />} />
+                <Route path="/users" render={() => <UsersContainer />} />
+                <Route path="/login" render={() => <LoginPage />} />
+                <Route path="*" render={() => <div> Err 404 Page not  found </div>  } />
+              </Switch>
             </div>
           </div>
     );

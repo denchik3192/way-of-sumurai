@@ -32,12 +32,12 @@ export const usersAPI = {
 }
 
 export const profileAPI = {
-
-    getProfile(userId = 14675) {
+    // = 14675
+    getProfile(userId ) {
         return instance.get(`profile/` + userId)
     },
 
-    getStatus(userId = 14675) {
+    getStatus(userId) {
         return instance.get(`profile/status/` + userId)
     },
 
@@ -65,7 +65,7 @@ export const authAPI = {
     me() {
         return instance.get(`auth/me`)
     },
-    login(email, password, rememberMe = false) {
+    login(email, password, rememberMe = false, captcha = null) {
         return instance.post(`auth/login`, { email, password, rememberMe, captcha })
     },
     logout() {
@@ -76,7 +76,7 @@ export const authAPI = {
 
 export const securityAPI = {
    
-    getCapchaURL() {
+    getCapchaUrl() {
         return instance.get(`security/get-captcha-url`);
     },
 

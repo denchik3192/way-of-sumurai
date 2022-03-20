@@ -15,26 +15,30 @@ class ProfileContainer extends React.Component {
 
   refreshProfile() {
     let userId = this.props.match.params.userId;
-    // debugger;
+    debugger;
     if (!userId) {
       userId = this.props.authorisedUserId;
       if(!userId){
-        // this.props.history.push("/login");//toDo fix errror
+        this.props.history.push("/login");//toDo fix errror
       }
       // userId=14675
     }
-    this.props.getUserProfile(userId);
-    this.props.getStatus(userId);
+  //   if (!userId) {
+  //     console.error("ID should exists in URI params or in state ('authorizedUserId')");
+  // } else {
+      this.props.getUserProfile(userId)
+      this.props.getStatus(userId)
+  // }
   }
 
   componentDidMount() {
     this.refreshProfile();
   }
 
-  componentDidUpdate(prevProps, prevState, snapshots){
-    if(this.props.match.params.userId !== prevProps.match.params.userId) {
+  componentDidUpdate(prevProps, prevState){
+    if (this.props.match.params.userId !== prevProps.match.params.userId) {
       this.refreshProfile();
-    }
+  }
   
   }
 
@@ -65,5 +69,4 @@ let mapStateToProps = (state) => {
 export default compose(
   connect(mapStateToProps, { getUserProfile, getStatus, updateStatus, savePhoto, saveProfile }),
   withRouter
-  // withAuthRedirect
 )(ProfileContainer);
